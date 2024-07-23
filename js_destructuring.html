@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Create an Object
+        const person = {
+            firstName: "John",
+            lastName: "Doe",
+            age: 50
+        };
+
+        // Destructuring
+        let { firstName, lastName: lastName_alias, country = "default_shit" } = person;
+
+        console.log(person.firstName);
+
+        // we can add default -> country
+        // we can add alias -> lastName_alias
+
+        // the rest property
+        const numbers = [10, 20, 30, 40, 50, 60, 70];
+
+        // Destructuring the remaining numbers after a and b with rest 
+        const [a, b, ...rest] = numbers
+
+        //IMPORTANT
+        // another common practice is swapping variables
+        let firstName01 = "John";
+        let lastName = "Doe";
+
+        // Destructing
+        [firstName01, lastName] = [lastName, firstName01];
+        
+    </script>
+</body>
+
+</html>
