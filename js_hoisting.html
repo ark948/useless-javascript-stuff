@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        //IMPORTANT It is highly recommended to always declare variables on top of the scope to prevent hoisting at all
+        x = 5;
+
+        elem = document.getElementById('demo');
+        elem.innerHTML = x;
+
+        var x;
+    </script>
+</body>
+</html>
