@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const person1 = {
+            firstName: "John",
+            lastName: "Doe",
+            id: 5566,
+            fullName: function () { // method
+                return this.firstName + " " + this.lastName; // this refers to the person object (like self in python)
+            }
+        };
+
+        
+        // IMPORTANT
+        //Create an Object
+        const person = {
+            firstName: "John",
+            lastName: "Doe",
+            age: 50, eyeColor: "blue"
+        }
+
+        // Create a copy
+        const x = person;
+
+        // Change Age in both
+        x.age = 10;
+        // x is not a copy, x IS the person
+    </script>
+</body>
+
+</html>

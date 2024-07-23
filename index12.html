@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="demo"></p>
+    <p id="demo02"></p>
+
+    <script>
+        // Constructor functions: allow us to create many objects of the same type more efficiently
+        // create constructor functions with uppercase letters (good practice)
+        function Person(first, last, age, eye) {
+            this.firstName = first;
+            this.lastName = last;
+            this.age = age;
+            this.eyeColor = eye;
+            this.fullname = function () {
+                return this.firstName + " " + this.lastName;
+            };
+            // this.nationality = "English"; // property with default value
+        }
+        // correct way to add stuff to function constructor
+        Person.prototype.shit = 2;
+        Person.prototype.changeName = function (name) {
+            this.lastName = name;
+        }
+
+        // in constructor functions, this has no value
+        const myFather = new Person("John", "Doe", 50, "blue");
+        const myMother = new Person("Sally", "Rally", 48, "green");
+        const mySister = new Person("Anna", "Rally", 18, "green");
+        const mySelf = new Person("Johnny", "Rally", 22, "green");
+
+        // we can add new properties to objects
+        myFather.nationality = "American"; // ok
+        // IMPORTANT: property will be added be added myFather, not to any other Person Objects
+
+        // new properties cannot be directly added to constructors
+        document.getElementById("demo").innerHTML = myFather.nationality;
+
+
+        // document.getElementById("demo02").innerHTML = Person.shit;
+        document.getElementById("demo02").innerHTML = mySelf.shit;
+
+        // built-in javascript constructors
+        new Object()   // A new Object object
+        new Array()    // A new Array object
+        new Map()      // A new Map object
+        new Set()      // A new Set object
+        new Date()     // A new Date object
+        new RegExp()   // A new RegExp object
+        new Function() // A new Function object
+
+    </script>
+</body>
+
+</html>

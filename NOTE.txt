@@ -1,0 +1,30 @@
+if want the script to run on some event, place the script in head
+if want the script to generate content, place it in the body
+
+index, index02 and index03 -> tutorialspoint - discontinue
+
+starting from w3schools now:
+
+
+JavaScript can "display" data in different ways:l
+    Writing into an HTML element, using innerHTML.
+    Writing into the HTML output using document.write(). 
+    Writing into an alert box, using window.alert().
+    Writing into the browser console, using console.log().
+
+Using document.write() after an HTML document is loaded, will delete all existing HTML:
+
+
+What is Good?
+let and const have block scope.
+let and const can not be redeclared.
+let and const must be declared before use.
+let and const does not bind to this.
+let and const are not hoisted.
+
+What is Not Good?
+var does not have to be declared.
+var is hoisted.
+var binds to this.
+
+If you add a number and a string, the result will be a string!

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="demo"></p>
+    <script>
+        const cars = ["saab", "volvo", "bmw"]; // an array
+        let car = cars[0];
+
+        // common practice to use const with arrays
+        // array elements can be modified
+
+        const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        let fLen = fruits.length;
+
+        let text = "<ul>";
+        for (let i = 0; i < fLen; i++) {
+            text += "<li>" + fruits[i] + "</li>";
+        }
+        text += "</ul>";
+        document.getElementById("demo").innerHTML = text;
+
+        const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+        let text = "<ul>";
+        fruits.forEach(myFunction);
+        text += "</ul>";
+
+        function myFunction(value) {
+            text += "<li>" + value + "</li>";
+        }
+
+        // WARNING: Adding elements with high indexes can create undefined "holes" in an array:
+        const fruits = ["Banana", "Orange", "Apple"];
+        fruits[6] = "Lemon";  // Creates undefined "holes" in fruits
+    </script>
+</body>
+
+</html>

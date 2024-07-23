@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+
+    <p id="p-values"></p>
+
+    <p id="demo02"></p>
+
+    <p id="demo03"></p>
+
+    <script>
+        // display a javascript object
+        
+        // this is an object
+        const person = {
+            name: "John",
+            age: 30,
+            city: "New York"
+        };
+
+        // display properties of object in a loop
+        let text_02 = "";
+        for (let x in person) {
+            text_02 += person[x] + " ";
+        };
+
+        document.getElementById("demo").innerHTML = text_02;
+
+        // display the values only
+        const myArray = Object.values(person);
+        document.getElementById("p-values").innerHTML = myArray;
+
+        const fruits = {Bananas:300, Oranges:200, Apples:500};
+        let text = "";
+        for (let [fruit, value] of Object.entries(fruits)) {
+            text += fruit + ": " + value + "<br>";
+        }
+        
+        document.getElementById("demo02").innerHTML = text;
+
+        let myString = JSON.stringify(person);
+
+        document.getElementById("demo03").innerHTML = myString;
+
+
+        // IMPORTANT Object methods: .values(), .entries(), and JSON.stringify()
+    </script>
+</body>
+</html>

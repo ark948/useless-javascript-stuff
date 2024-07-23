@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Create an Object
+        const person1 = {
+            firstName: "John",
+            lastName: "Doe",
+            age: 50,
+            eyeColor: "blue"
+        };
+
+        // Create an empty Object
+        const person2 = {};
+
+        // Add Properties
+        person2.firstName = "John";
+        person2.lastName = "Doe";
+        person2.age = 50;
+        person2.eyeColor = "blue";
+
+        // you can use the 'new' keyword as well
+        const person3 = new Object();
+        person3.firstName = "Nick";
+
+        // two ways to access object variables
+        console.log(person3.firstName);
+        console.log(person3['firstName']);
+    </script>
+</body>
+
+</html>
