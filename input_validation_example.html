@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- this script validates the input using javascript -->
+    <!-- however, modern browser can do all of these with pure html -->
+    <!-- <input id="demo" type="number" min="5" max="10" step="1"> -->
+
+    <p>Please input a number between 5 and 10.</p>
+
+    <input id="demo" type="text">
+    <button type="button" onclick="myFunction()">Test Input</button>
+    <p id="p01"></p>
+
+    <script>
+        function myFunction() {
+            const message = document.getElementById("p01");
+            message.innerHTML = "";
+            let x = document.getElementById("demo").value;
+            try {
+                if (x.trim() == "") throw "empty";
+                if (isNaN(x)) throw "Not a number";
+                x = Number(x);
+                if (x < 5) throw "too low";
+                if (x > 10) throw "too high";
+            }
+            catch(err) {
+                message.innerHTML = "Input is " + err;
+            }
+            finally {
+                document.getElementById("demo").value = "";
+            }
+        }
+    </script>
+</body>
+</html>
