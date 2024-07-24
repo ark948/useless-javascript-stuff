@@ -29,6 +29,8 @@ var binds to this.
 
 If you add a number and a string, the result will be a string!
 
+Variables created without a declaration keyword (var, let, or const) are always global, even if they are created inside a function.
+
 
 Semicolons are used to separate executable statements.
 e.g. a function declaration is NOT a executable statements, so it is not common to put Semicolon at the end of it.
