@@ -39,3 +39,6 @@ e.g. a function declaration is NOT a executable statements, so it is not common 
 Arrow functions are not hoisted.
 Arrow functions have no this.
 Arrow functions are not suitable for object methods.
+
+
+Class declarations are NOT hoisted.
