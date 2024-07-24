@@ -28,3 +28,12 @@ var is hoisted.
 var binds to this.
 
 If you add a number and a string, the result will be a string!
+
+
+Semicolons are used to separate executable statements.
+e.g. a function declaration is NOT a executable statements, so it is not common to put Semicolon at the end of it.
+
+
+Arrow functions are not hoisted.
+Arrow functions have no this.
+Arrow functions are not suitable for object methods.

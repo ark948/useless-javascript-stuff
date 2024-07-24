@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        "use strict";
+        // function declaration using function keyword
+        function myFunction(a, b) {
+            return a + b;
+        }
+
+        // function declaration using function expression
+        const y = function (a, b) { return a * b };
+
+        // function declaration using Function Constructor
+        const myFunction02 = new Function("a", "b", "return a + b");
+
+        // Javascript hoisting also applies to functions
+        myFunction03(5);
+
+        function myFunction03(y) {
+            return y * y;
+        }
+
+
+        // self-inoking function (anonymous type)
+        (function () {
+            let x = "Hello";
+            console.log("shit"); // automatically invoked
+        })();
+
+
+        // arrow functions
+        const x2 = (x, y) => x * y;
+
+        // IMPORTANT arrow functions are not hoisted
+    </script>
+</body>
+</html>
