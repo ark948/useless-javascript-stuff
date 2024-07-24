@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        // using javascript's call() method
+        // call() is predefined method
+        // with call(), an object can use a method belonging to another object
+        const person = {
+            fullName: function () {
+                return this.firstName + " " + this.lastName;
+            }
+        }
+
+        const person1 = {
+            firstName: "John",
+            lastName: "Doe"
+        }
+        const person2 = {
+            firstName: "Mary",
+            lastName: "Doe"
+        }
+
+        // This will return "John Doe":
+        person.fullName.call(person1);
+
+        // explanation: take fullName method from person object and call it on person1 object
+
+        // call() can accept arguments as well
+        const person3 = {
+            fullName: function(city, country) {
+                return this.firstName + " " + this.lastName + "," + city + "," + country;
+            }
+        }
+
+        const person4 = {
+            firstName: "John",
+            lastName: "Doe"
+        }
+
+        person3.fullName.call(person4, "Oslo", "Norway");
+    </script>
+</body>
+
+</html>
