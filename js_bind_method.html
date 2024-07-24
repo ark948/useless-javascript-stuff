@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        "use strict";
+
+        // with bind() method, an object can borrow a method from another object
+
+        // example: we have two objects, person and member
+        // member will borrow the fullName method from person
+        const person1 = {
+            firstName: "John",
+            lastName: "Doe",
+            fullName: function () {
+                return this.firstName + " " + this.lastName;
+            }
+        }
+
+        const member = {
+            firstName: "Hege",
+            lastName: "Nilsen",
+        }
+
+        let fullName = person1.fullName.bind(member);
+
+        // Preserving 'this'
+        // sometimes bind() is used to prevent losing 'this'
+
+        // the following method works ok
+        const person2 = {
+            firstName: "John",
+            lastName: "Doe",
+            display: function () {
+                let x = document.getElementById("demo");
+                x.innerHTML = this.firstName + " " + this.lastName;
+            }
+        }
+
+        person2.display();
+
+        // when a function is used as a callback (passing a func as arg), 'this' is lost
+        // This example will try to display the person name after 3 seconds, but it will display undefined instead
+        setTimeout(person2.display, 3000);
+
+        // bind() will solve this problem
+        // take display method from person2 object and borrow it to display variable
+        let display = person2.display.bind(person2);
+        setTimeout(display, 3000);
+    </script>
+</body>
+
+</html>
