@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        "use strict";
+        function myFunction01(a, b) {
+            return a * b;
+        }
+        myFunction01(10, 2); // Will return 20
+
+
+        // in js, there is always a default global object
+        // in html, the default global object is HTML page itself, the function above belongs to HTML page
+        // in the browser, page object is the browser window
+
+
+        // therefore, it can be called like this as well (because it belongs to window)
+        window.myFunction01(10, 2); // Will return 20
+
+        // in a function, 'this' belongs to the global object
+        let x = myFunction02(); // x will be the window object
+
+        function myFunction02() {
+            return this;
+        }
+
+        // This is a function constructor:
+        function myFunction03(arg1, arg2) {
+            this.firstName = arg1;
+            this.lastName = arg2;
+        }
+
+        // This creates a new object
+        const myObj = new myFunction03("John", "Doe");
+
+        // This will return "John"
+        myObj.firstName;
+
+    </script>
+</body>
+
+</html>
