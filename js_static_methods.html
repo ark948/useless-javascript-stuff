@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        // static class methods are methods that can be ran from class directly
+        // NOT on the object instance itself
+
+        class Car {
+            constructor(name) {
+                this.name = name;
+            }
+            static hello(x) {
+                return "Hello!!";
+            }
+        }
+
+        const myCar = new Car("Ford");
+
+        // You can call 'hello()' on the Car Class:
+        document.getElementById("demo").innerHTML = Car.hello(); // running hello() from class declaration itself
+
+        // But NOT on a Car Object:
+        // document.getElementById("demo").innerHTML = myCar.hello();
+        // this will raise an error.
+
+        // however, object instances can be passed as parameter
+
+        class Car {
+            constructor(name) {
+                this.name = name;
+            }
+            static hello(x) {
+                return "Hello " + x.name;
+            }
+        }
+        const myCar = new Car("Ford");
+        document.getElementById("demo").innerHTML = Car.hello(myCar);
+    </script>
+</body>
+
+</html>
