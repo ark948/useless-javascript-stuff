@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        "use strict";
+        // apply() method is similar to call() method
+        // with one small difference
+
+        // apply() method takes arguments as an array (call() takes them separately)
+
+        const person = {
+            fullName: function (city, country) {
+                return this.firstName + " " + this.lastName + "," + city + "," + country;
+            }
+        }
+
+        const person1 = {
+            firstName: "John",
+            lastName: "Doe"
+        }
+
+        person.fullName.apply(person1, ["Oslo", "Norway"]);
+
+
+        // real example
+        // we can find the largest number in a list, using the Math.max() method:
+        Math.max(1, 2, 4); // will return 4
+
+        // since arrays have no max method, we can apply Math.max() on them instead
+        Math.max.apply(null, [1, 2, 3]); // will return 3
+
+        // the following examples will give the same result as well:
+        Math.max.apply(Math, [1,2,3]); // Will also return 3
+        Math.max.apply(" ", [1,2,3]); // Will also return 3
+        Math.max.apply(0, [1,2,3]); // Will also return 3
+    </script>
+</body>
+
+</html>
