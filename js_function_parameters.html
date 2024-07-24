@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        // common way to handle missing parameters
+        function f01(x, y) {
+            if (y === undefined) {
+                y = 2;
+            }
+        }
+
+        // providing default value for parameter
+        function f02(x, y = 10) {
+            return x + y;
+        }
+
+        // function rest parameter (unpacking)
+        function f03(...args) {
+            let sum = 0;
+            for (let arg of args) {
+                sum += arg;
+            }
+            return sum;
+        }
+
+        let my_sums = f03(4, 9, 16, 25, 29, 100, 66, 77);
+
+        // Argument Object
+        // functions have an special object called arguments object
+        // it contains an array of arguments used when func is invoked
+        x1 = findMax(1, 123, 500, 115, 44, 88);
+
+        function findMax() {
+            let max = -Infinity;
+            for (let i = 0; i < arguments.length; i++) {
+                if (arguments[i] > max) {
+                    max = arguments[i];
+                }
+            }
+            return max;
+        }
+
+        x2 = sumAll(1, 123, 500, 115, 44, 88);
+
+        function sumAll() {
+            let sum = 0;
+            for (let i = 0; i < arguments.length; i++) {
+                sum += arguments[i];
+            }
+            return sum;
+        }
+        // it's just a way to access all given arguments
+
+        
+    </script>
+</body>
+
+</html>
