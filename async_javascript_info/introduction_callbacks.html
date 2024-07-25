@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="demo"></p>
+    <script>
+        "use strict";
+        function loadScript(src) {
+            // creates a <script> tag and appends to the page
+            // causes the script with given src to start loading and run when complete
+            let script = document.createElement('script');
+            script.src = src;
+            document.head.append(script);
+        }
+
+        // we can use it like this: loadScript('/my/script.js')
+        // we don't exactly know when the functions and other js stuff in script.js will be available
+
+        // using callbacks, we can make it so, that when the script finishes loading...
+        // the rest of our code will be called and it will definitely be available
+        function loadScript(src, callback) {
+            let script = document.createElement('script');
+            script.src = src;
+
+            script.onload = () => callback(script);
+            document.head.append(script);
+        }
+
+        loadScript('/my/script.js', function () {
+            // the callback runs after the script is loaded
+            newFunction(); // so now it works
+            // ...
+        });
+
+        // what if wanted to run some scripts sequentially?س
+        // we can do that with callbacks
+        loadScript('/my/script.js', function (script) {
+
+            loadScript('/my/script2.js', function (script) {
+
+                loadScript('/my/script3.js', function (script) {
+                    // ...continue after all scripts are loaded
+                });
+
+            });
+
+        });
+
+        // but what if there was an error, in loading one of the functions?
+        function loadScript(src, callback) {
+            let script = document.createElement('script');
+            script.src = src;
+
+            script.onload = () => callback(null, script);
+            script.onerror = () => callback(new Error(`Script load error for ${src}`));
+
+            document.head.append(script);
+        }
+        // or 
+        loadScript('/my/script.js', function (error, script) {
+            if (error) {
+                // handle error
+            } else {
+                // script loaded successfully
+            }
+        });
+        
+    </script>
+</body>
+
+</html>

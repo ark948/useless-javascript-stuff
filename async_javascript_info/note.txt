@@ -1,0 +1,2 @@
+basic idea of callback functions:
+    a function will run another function passed to it.
