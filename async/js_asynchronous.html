@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p id="demo"></p>
+    <script>
+        "use strict";
+
+        // Functions running in parallel with other functions are called asynchronous
+        // a good example is setTimeout()
+        setTimeout(myFunction, 3000);
+        function myFunction() {
+            document.getElementById('demo').innerHTML = "I love you.";
+        }
+
+        // myFunction will be called after 3 seconds
+
+        // there is also setInterval
+
+        // most async js methods do not use callbacks, instead they use Promises
+    </script>
+</body>
+</html>
